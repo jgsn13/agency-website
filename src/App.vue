@@ -4,6 +4,8 @@
   <section id="wrapper">
     <Service />
     <Pricing />
+    <CallToAct />
+    <Contact />
   </section>
 </template>
 
@@ -12,6 +14,8 @@ import NavBar from './components/NavBar.vue'
 import Home from './components/Home.vue'
 import Service from './components/Service.vue'
 import Pricing from './components/Pricing.vue'
+import CallToAct from './components/CallToAct.vue'
+import Contact from './components/Contact.vue'
 
 export default {
   name: 'App',
@@ -19,7 +23,9 @@ export default {
     NavBar,
     Home,
     Service,
-    Pricing
+    Pricing,
+    CallToAct,
+    Contact
   }
 }
 </script>
