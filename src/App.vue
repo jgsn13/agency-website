@@ -7,6 +7,7 @@
     <CallToAct />
     <Contact />
   </section>
+  <Footer />
 </template>
 
 <script>
@@ -16,6 +17,7 @@ import Service from './components/Service.vue'
 import Pricing from './components/Pricing.vue'
 import CallToAct from './components/CallToAct.vue'
 import Contact from './components/Contact.vue'
+import Footer from './components/Footer.vue'
 
 export default {
   name: 'App',
@@ -25,7 +27,8 @@ export default {
     Service,
     Pricing,
     CallToAct,
-    Contact
+    Contact,
+    Footer
   }
 }
 </script>
@@ -39,9 +42,20 @@ export default {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   background-color: #ffffff;
+}
+
+.offset:before {
+  display: block;
+  content: "";
+  height: 10rem;
+  margin-top: -2rem;
 }
 
 a {
@@ -85,6 +99,18 @@ h6 {
 }
 
 #wrapper {
-  margin: 5rem 7rem 10rem 7rem;
+  margin: 1rem 7rem 10rem 7rem;
+}
+
+@media only screen and (max-width: 946px) {
+  #wrapper {
+    margin: 1rem 3rem 9rem 3rem;
+  }
+}
+
+@media only screen and (max-width: 774px) {
+  #wrapper {
+    margin: 1rem 1rem 8rem 1rem;
+  }
 }
 </style>

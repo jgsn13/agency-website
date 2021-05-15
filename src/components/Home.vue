@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="back">
+    <div class="back" id="home">
       <div class="overlay"></div>
       <div class="hero-shape">
         <img src="../assets/images/header-shape.svg">
@@ -35,7 +35,8 @@ export default {
 }
 
 .back .overlay {
-  background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.005) 8%, rgba(255,255,255,1) 78%);
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,0) 1%, rgba(255,255,255,0.005) 4%, rgba(255,255,255,1) 100%); 
   width: 100%;
   height: 100%;
 }
@@ -111,5 +112,38 @@ export default {
 
 .hero-text .header-btn .btn-two:hover {
   box-shadow: 0 3px 30px 0 rgba(0,0,0,0.16);
+}
+
+@media only screen and (max-width: 946px) {
+  .hero-text {
+    width: 60%;
+  }
+
+  .hero-text h3 {
+    font-size: 33px;
+  }
+}
+
+
+@media only screen and (max-width: 774px) {
+  .hero-text {
+    width: 80%;
+  }
+
+  .hero-text h6 {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 541px) {
+  .hero-text h3 {
+    font-size: 28px;
+    line-height: 45px;
+  }
+
+  .hero-text .header-btn li a.main-btn {
+    margin-top: 0.7rem;
+    font-size: 15px;
+  }
 }
 </style>

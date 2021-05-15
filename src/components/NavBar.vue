@@ -1,5 +1,5 @@
 <template>
-  <div class="nav">
+  <div :class="navClasses">
 
     <!--Navbar logo-->
     <a class="logo" href="#">
@@ -7,19 +7,19 @@
     </a>
 
     <!--Navbar Button-->
-    <div class="navbar-toggler" type="button" id="bar">
+    <div @click="toggleMenu" class="navbar-toggler" type="button" id="bar">
       <span class="toggler-icon"></span>
       <span class="toggler-icon"></span>
       <span class="toggler-icon"></span>
     </div>
 
     <!--Navbar Items-->
-    <div class="menu-bar">
+    <div :style="{right: toggleMenuClick ? '0' : '-360px'}" class="menu-bar" id="navbar">
       <ul class="menu-items">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Service</a></li>
-        <li><a href="#">Pricing</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a @click="closeToggleMenu" href="#home">Home</a></li>
+        <li><a @click="closeToggleMenu" href="#service">Service</a></li>
+        <li><a @click="closeToggleMenu" href="#pricing">Pricing</a></li>
+        <li><a @click="closeToggleMenu" href="#contact">Contact</a></li>
       </ul>
     </div>
 
@@ -40,6 +40,32 @@
 <script>
 export default {
   name: 'NavBar',
+  data() {
+    return {
+      navClasses: {
+        'nav': true
+      },
+      toggleMenuClick: false
+    };
+  },
+  methods: {
+    addNavScrolled() {
+      const winSize = window.scrollY;
+      this.navClasses['scrolled'] = winSize > 0;
+    },
+    toggleMenu() {
+      this.toggleMenuClick = !this.toggleMenuClick;
+    },
+    closeToggleMenu() {
+      this.toggleMenuClick = false;
+    }
+  },
+  mounted() {
+    window.addEventListener('scroll', this.addNavScrolled);
+  },
+  unmounted() {
+    window.addEventListener('scroll', this.addNavScrolled);
+  }
 }
 </script>
 
@@ -51,10 +77,16 @@ export default {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 1rem 6.5rem;
+  padding: 0.4rem 5rem;
   background: transparent;
   transition: all 0.5s ease;
   z-index: 100000;
+}
+
+.nav.scrolled {
+  background-color: #ffffff !important;
+  transition: background-color 200ms linear;
+  box-shadow: 7px 10px 15px rgba(0, 0, 0, 0.3);
 }
 
 .nav .navbar-toggler {
@@ -126,5 +158,52 @@ export default {
 
 .nav .navbar-social ul li a:hover {
   color: #4F47E4;
+}
+
+@media only screen and (max-width: 946px) {
+  .nav {
+    padding: 0.3rem 3rem;
+  }
+
+  .nav .navbar-social {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 774px) {
+  .nav {
+    padding: 0.3rem 1rem;
+  }
+
+  .nav .navbar-toggler {
+    display: block;
+    position: absolute;
+    top: 26px;
+    right: 16px;
+    z-index: 1000000;
+  }
+
+  .nav .menu-bar {
+    position: fixed;
+    top: 55px;
+    right: -360px;
+    width: 300px;
+    height: 100vh;
+    background-color: rgba(256, 256, 256, 0.9);
+    transition: all 0.6s ease;
+  }
+
+  .nav .menu-bar .menu-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: justify;
+    padding: 40px 0;
+  }
+
+  .nav .menu-bar .menu-items li {
+    margin: 2rem 30px;
+  }
 }
 </style>

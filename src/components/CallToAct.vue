@@ -31,6 +31,7 @@ export default {
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
+  margin-bottom: 10rem;
 }
 
 .call-to-act .parallax {
@@ -82,4 +83,60 @@ export default {
   margin-left: 20px;
   border-radius: 50px;
 } 
+
+@media only screen and (max-width: 946px) {
+  .call-to-act {
+    margin-bottom: 5rem;
+  }
+
+  .call-to-act .parallax {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 774px) {
+  .call-to-act .parallax {
+    width: 90%;
+  }
+
+  .call-to-act .parallax h3 {
+    font-size: 33px;
+  }
+
+  .call-to-act .parallax h6 {
+    font-size: 16px;
+  }
+
+  .call-to-act .parallax .call-news input {
+    font-size: 16px;
+  }
+
+  .call-to-act .parallax .call-news button {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 541px) {
+  .call-to-act .parallax h3 {
+    font-size: 28px;
+    line-height: 45px;
+  }
+
+  .call-to-act .parallax .call-news {
+    width: 300px;
+    height: 55px;
+    padding: 12px 0;
+    display: block;
+    align-items: center;
+  }
+
+  .call-to-act .parallax .call-news button {
+    font-size: 13px;
+    font-weight: 600;
+    position: relative;
+    margin: 35px 0 0 0;
+    background: #ffffff;
+    color: #8816D1;
+  }
+}
 </style>

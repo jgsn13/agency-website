@@ -1,5 +1,5 @@
 <template>
-  <section id="pricing" class="pricing">
+  <section id="pricing" class="pricing offset">
     <h3>Our Pricing</h3>
     <h6>Stop wasting time and money designing and<br> managing a website that doesn't get results. Happiness guaranteed!</h6>
 
@@ -133,6 +133,7 @@ export default {
 .pricing {
   display: block;
   text-align: center;
+  margin-bottom: 10rem;
 }
 
 .pricing h6 {
@@ -246,5 +247,36 @@ export default {
   background-image: linear-gradient(to right, #535CF1, #A147E4);
   color: #ffffff;
   border: 1px solid #2ECC71;
+}
+
+@media only screen and (max-width: 946px) {
+  .pricing .table {
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+
+  .pricing .basic {
+    margin-bottom: 3rem;
+  }
+}
+
+@media only screen and (max-width: 774px) {
+  .pricing h3 {
+    font-size: 33px;
+  }
+
+  .pricing h6 {
+    font-size: 16px;
+  }
+
+  .pricing .table {
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+
+  .pricing .basic {
+    margin-bottom: 4rem;
+  }
 }
 </style>

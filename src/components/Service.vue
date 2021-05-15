@@ -1,5 +1,5 @@
 <template>
-  <section id="service" class="service">
+  <section id="service" class="service offset">
     <h3>Crafted For</h3>
     <h6>Stop wasting time and money designing and<br> managing a website that doesn't get results. Happiness guaranteed!</h6>
 
@@ -70,6 +70,7 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin-bottom: 7rem;
 }
 
 .service h6 {
@@ -126,5 +127,75 @@ export default {
   justify-content: flex-start;
   align-items: flex-start;
   text-align: justify;
+}
+
+@media only screen and (max-width: 946px) {
+  .service {
+    margin-bottom: 3rem;
+  }
+
+  .service h6 {
+    margin-bottom: 3rem;
+  }
+
+  .service .service-content {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+
+  .service .service-content .box {
+    width: 100%;
+  }
+
+  .service .service-content .box .box-one {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .service .service-content .service-img {
+    width: 90%;
+    margin-bottom: 4rem;
+  }
+}
+
+@media only screen and (max-width: 774px) {
+  .service h3 {
+    font-size: 33px;
+  }
+
+  .service h6 {
+    font-size: 16px;
+  }
+
+  .service .service-content .service-img {
+    width: 80%;
+    margin-bottom: 4rem;
+  }
+}
+
+@media only screen and (max-width: 541px) {
+  .service {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .service h6 {
+    text-align: justify;
+  }
+
+  .service .service-content .box {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  
+  .service .service-content .box .box-one {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 }
 </style>
