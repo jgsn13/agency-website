@@ -1,9 +1,9 @@
 # agency-website
 
 ## Some screenshots
-![Home](./screenshots/Screenshot_2021-05-15-31_1069x504.png "Home")
+![Home](./screenshots/Screenshot_2021-05-15-10_1102x671.png "Home")
 ![Home responsive](./screenshots/Screenshot_2021-05-15-43_414x479.png "Home responsive")
-![services](./screenshots/Screenshot_2021-05-15-10_1102x671.png "Services")
+![Services](./screenshots/Screenshot_2021-05-15-31_1069x504.png "Services")
 
 ## Project setup
 ```
